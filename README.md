@@ -60,6 +60,62 @@ Usage
 
     RKPairip -c
 
+Fix Dex Regex
+-------------
+
+**Some time Not works Script -r (Repair_Dex) Flag, Because Script Delete Pairip Classes Folder ,When something time important classes here in pairip folder so manually use Regex & Don't Delete Pairip Folder when in here important classes**
+
+
+**Patch 1**
+`regex`
+
+    # direct methods\n.method public static )appkiller\(\)V([\s\S]*?.end method)[\w\W]*
+    
+`Replace`
+
+    $1constructor <clinit>()V$2
+
+**Patch 2**
+`regex`
+
+    sget-object.*\s+.*const-string v1,(.*\s+).*.line.*\n+.+.*\n.*invoke-static \{v0\}, LRK_TECHNO_INDIA/ObjectLogger;->logstring\(Ljava/lang/Object;\)V
+    
+`Replace`
+
+    const-string v0,$1
+
+**Patch 3**
+`regex`
+
+    invoke-static \{\}, .*;->callobjects\(\)V\n
+    
+`Replace`
+
+    Nothing(Means Empty) 
+
+**Patch 4**
+`regex`
+
+    (\.method public.*onReceive\(Landroid/content/Context;Landroid/content/Intent;\)V\n\s+\.(.+) \d+\n\s+)[^>]*const-string/jumbo([\s\S]*?)(\s+return-void\n.end method)
+    
+`Replace`
+
+    $1$4
+
+
+**Patch 5**
+`Search 1st without regex`
+
+    pairip
+    
+`Search regex in Current Results`
+
+    .*pairip/(?!licensecheck).*
+
+`Replace`
+
+    Nothing(Means Empty) 
+
 
 Updating
 --------

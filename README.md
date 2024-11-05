@@ -91,7 +91,7 @@ Fix Dex Regex
     
 `Replace`
 
-    Nothing(Means Empty) 
+    # Nothing(Means Empty) 
 
 **Patch 4**
 `regex`
@@ -114,7 +114,7 @@ Fix Dex Regex
 
 `Replace`
 
-    Nothing(Means Empty) 
+    # Nothing(Means Empty) 
 
 
 Updating

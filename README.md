@@ -67,6 +67,7 @@ Fix Dex Regex
 
 
 **Patch 1**
+
 `regex`
 
     # direct methods\n.method public static )appkiller\(\)V([\s\S]*?.end method)[\w\W]*
@@ -76,6 +77,7 @@ Fix Dex Regex
     $1constructor <clinit>()V$2
 
 **Patch 2**
+
 `regex`
 
     sget-object.*\s+.*const-string v1,(.*\s+).*.line.*\n+.+.*\n.*invoke-static \{v0\}, LRK_TECHNO_INDIA/ObjectLogger;->logstring\(Ljava/lang/Object;\)V
@@ -85,6 +87,7 @@ Fix Dex Regex
     const-string v0,$1
 
 **Patch 3**
+
 `regex`
 
     invoke-static \{\}, .*;->callobjects\(\)V\n
@@ -94,6 +97,7 @@ Fix Dex Regex
     # Nothing(Means Empty) 
 
 **Patch 4**
+
 `regex`
 
     (\.method public.*onReceive\(Landroid/content/Context;Landroid/content/Intent;\)V\n\s+\.(.+) \d+\n\s+)[^>]*const-string/jumbo([\s\S]*?)(\s+return-void\n.end method)

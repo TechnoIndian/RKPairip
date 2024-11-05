@@ -63,7 +63,7 @@ Usage
 Fix Dex Regex
 -------------
 
-**Some time Not works Script -r (Repair_Dex) Flag, Because Script Delete Pairip Classes Folder ,When something time important classes here in pairip folder so manually use Regex & Don't Delete Pairip Folder when in here important classes**
+**Some time Not works Script -r (Repair_Dex) Flag, Because Script Delete Pairip Classes Folder ,When some time important classes here in pairip folder so manually use Regex & Don't Delete Pairip Folder when in here important classes**
 
 
 **Patch 1**

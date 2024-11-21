@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="rkjp",
-    version="2.0",
+    version="2.0.0",
     author="RK_TECHNO_INDIA",
     author_email="TechnoIndia555@gmail.com",
     description="Recover String & Rebuild Apk",

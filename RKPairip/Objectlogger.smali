@@ -237,7 +237,7 @@
     invoke-virtual {v1, v3, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
     move-result-object v1
     const-string v2, "[PACKAGE]"
-    const-string v3, "package.name"
+    const-string v3, "PACKAGENAME"
     invoke-virtual {v1, v2, v3}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
     move-result-object v1
     sget-object v2, LRK_TECHNO_INDIA/ObjectLogger;->TIME_FORMAT2:Ljava/text/SimpleDateFormat;
@@ -282,7 +282,7 @@
     if-nez v0, :cond_90
     :try_start_5b
     new-instance v3, Ljava/io/File;
-    const-string v4, "/data/data/package.name/dictionary"
+    const-string v4, "/data/data/PACKAGENAME/dictionary"
     invoke-direct {v3, v4}, Ljava/io/File;-><init>(Ljava/lang/String;)V
     new-instance v4, Ljava/io/File;
     new-instance v5, Ljava/lang/StringBuilder;

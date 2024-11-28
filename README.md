@@ -17,13 +17,9 @@ Install
 
 **RK_Pairip Method 1**
 
-    python3 -m pip install RK_Pairip
+    curl -L -o RKPairip.sh https://github.com/TechnoIndian/setup/releases/download/RKPairip/RKPairip.sh && chmod +x RKPairip.sh && ./RKPairip.sh
 
 **RK_Pairip Method 2**
-
-    curl -L -o RKPairip.sh https://github.com/TechnoIndian/setup/releases/download/RKPairip/RKPairip.sh && ./RKPairip.sh
-
-**RK_Pairip Method 3**
 
     pkg install python git && pip install git+https://github.com/TechnoIndian/RK_Pairip.git
 

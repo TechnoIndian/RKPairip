@@ -120,7 +120,7 @@ Fix Dex Regex
     
 `Search regex in Current Results`
 
-    .*pairip/(?!licensecheck).*
+    invoke.*pairip/(?!licensecheck/).*
 
 `Replace`
 

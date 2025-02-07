@@ -33,15 +33,21 @@ Usage
 
     RKPairip -i YourApkPath.apk
 
-**Mode -a ➸ Decompile With ApkTool**
+**Mode -a ➸ Decompile With ApkTool / Mode -b ➸ Decompile With Bak_Smali**
+
+`For ApkTool ( -a )`
 
     RKPairip -i YourApkPath.apk -a
+
+`For Bak_Smali ( -b )`
+
+    RKPairip -i YourApkPath.apk -b
 
 **Mode -d ➸ Delete SignatureCheck & LicenseClientV3 .smali (Default Is Set, Just Bypass)**
 
     RKPairip -i YourApkPath.apk -d
     
-`For ApkTool`
+`For ApkTool ( -a -d ) / For Bak_Smali ( -b -d )`
 
     RKPairip -i YourApkPath.apk -a -d
 
@@ -49,13 +55,17 @@ Usage
 
     RKPairip -i YourApkPath.apk -s
     
-`For ApkTool`
+`For ApkTool ( -a -s ) / For Bak_Smali ( -b -s )`
 
     RKPairip -i YourApkPath.apk -a -s
     
 **Mode -r ➸ Pairip Dex Fix ( Try After Translate String to MT )**
 
     RKPairip -i YourApkPath.apk -r
+
+**If Failed SigCopy Use Another Method ( Default apksigcopier, Use only with -a & -b ) -a -s2 / -b -s2**
+
+    RKPairip -i YourApkPath.apk -a -s2
 
 **Mode -m ➸ Anti-Split ( Only Merge Apk )**
 
@@ -68,14 +78,14 @@ Usage
 Fix Dex Regex
 -------------
 
-**Some time Not works Script -r (Repair_Dex) Flag, Because Script Delete Pairip Classes Folder ,When some time important classes here in pairip folder so manually use Regex & Don't Delete Pairip Folder when in here important classes**
+**Some time Not works Script -r (Repair_Dex) Flag, Because Script Delete Pairip Classes Folder, When some time important classes here in pairip folder so manually use Regex & Don't Delete Pairip Folder when in here important classes**
 
 
 **Patch 1**
 
 `regex`
 
-    # direct methods\n.method public static )appkiller\(\)V([\s\S]*?.end method)[\w\W]*
+    (# direct methods\n.method public static )FuckUByRK\(\)V([\s\S]*?.end method)[\w\W]*
     
 `Replace`
 
@@ -105,11 +115,11 @@ Fix Dex Regex
 
 `regex`
 
-    (\.method public.*onReceive\(Landroid/content/Context;Landroid/content/Intent;\)V\n\s+\.(.+) \d+\n\s+)[^>]*const-string/jumbo([\s\S]*?)(\s+return-void\n.end method)
+    (\.method public.*onReceive\(Landroid/content/Context;Landroid/content/Intent;\)V\s+\.(registers|locals) \d+)[\s\S]*?const-string/jumbo[\s\S]*?(\s+return-void\n.end method)
     
 `Replace`
 
-    $1$4
+    $1$3
 
 
 **Patch 5**
@@ -125,12 +135,6 @@ Fix Dex Regex
 `Replace`
 
     # Nothing(Means Empty) 
-
-
-Updating
---------
-
-    python3 -m pip install --upgrade RK_Pairip
 
 
 Note

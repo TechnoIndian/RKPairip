@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Pairip"
+dynamic = ["version"]
+authors = [
+  { name = "RK_TECHNO_INDIA", email = "TechnoIndian786@gmail.com" }
+]
+
+description = "Smali Patcher ( Recover String & Rebuild Apk )"
+
+license = { text = "MIT" }
+readme = "README.md"
+
+requires-python = ">=3.12"
+
+dependencies = [
+  "requests",
+  "multiprocess"
+]
+
+keywords = ["RKPairip"]
+
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+]
+
+[project.scripts]
+RKPairip = "RKPairip.RK_Pairip:RK_Techno_IND"
+
+[tool.setuptools]
+include-package-data = true
+
+packages.find = {}
+
+package-data = { RKPairip = [
+  "Utils/Files/Objectlogger.smali",
+  "Utils/Files/lib_Pairip_CoreX.so"
+] }
+
+[project.urls]
+Homepage = "https://github.com/TechnoIndian/RKPairip"
+Repository = "https://github.com/TechnoIndian/RKPairip.git"
+Issues = "https://github.com/TechnoIndian/RKPairip/issues"
+
+[tool.setuptools.dynamic]
+version = { file = "VERSION" }

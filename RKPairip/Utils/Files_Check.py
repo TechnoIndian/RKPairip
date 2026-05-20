@@ -110,12 +110,12 @@ class FileCheck:
                 (
                     "https://github.com/TechnoIndian/Tools/releases/download/Tools/APKEditor.jar",
                     self.APKEditor_Path,
-                    "026906af28497577496a3e1f5054a878a7cf9c1b3889626882d87ea88d09c20f"
+                    "a9cd40df818845456be6d696de6110c89edf4b0a0580cb83438ed6b25a366e67"
                 ),
                 (
                     "https://github.com/TechnoIndian/Tools/releases/download/Tools/Pairip.jar",
                     self.Pairip_Jar_Path,
-                    "3914376b749a973e8880cbc2f930f3b53dcdf4bd8c8977d0a13b525fcbaad0f2"
+                    "197d0569000e5363c5d10f7a2ea9ef749e129317941ba75792a1e180270fc16e"
                 ),
                 (
                     "https://raw.githubusercontent.com/TechnoIndian/Objectlogger/main/Objectlogger.smali",

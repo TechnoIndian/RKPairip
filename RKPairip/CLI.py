@@ -26,6 +26,8 @@ class CustomArgumentParser(M.argparse.ArgumentParser):
                         f'{EX} -a\n\n'
                         f'\n{C.INFO} Pairip New Method By NullRE Use Flag: {C.OG}-n\n'
                         f'{EX} -n\n\n'
+                        f'\n{C.INFO} Pairip Restored String Translate ( If you already have pairip.json ) Use Flag: {C.OG}-n -t\n'
+                        f'{EX} -n -t {C.G}/sdcard/MT2/dictionary/pairip.json\n\n'
                         f'\n{C.INFO} Merge Skip Use Flag: {C.OG}-s {C.P}( Do U Want Last Dex Add Seprate For Dex Redivision )\n'
                         f'{EX} -s\n\n'
                         f'\n{C.INFO} Pairip Dex Fix Use {C.C}Flag: {C.OG}-r {C.P}( Try After Translate String to MT )\n'
@@ -86,13 +88,19 @@ def parse_arguments():
         '-a', '--ApkTool',
         action = 'store_true',
         help = f'{C.Y}➸ {C.G}ApkTool ( Fast, But Not Stable Comparison To APKEditor ){C.C}'
-        )
+    )
 
     additional.add_argument(
         '-n', '--NullRE',
         action = 'store_true',
         help = f'{C.Y}➸ {C.G}Pairip New Method By NullRE{C.C}'
-        )
+    )
+
+    additional.add_argument(
+        '-r', '--Repair_Dex',
+        action = 'store_true',
+        help = f'{C.Y}➸ {C.G}Pairip Dex Fix ( Try After Translate String to MT ){C.C}'
+    )
 
     additional.add_argument(
         '-s', '--MergeSkip',
@@ -101,9 +109,8 @@ def parse_arguments():
     )
 
     additional.add_argument(
-        '-r', '--Repair_Dex',
-        action = 'store_true',
-        help = f'{C.Y}➸ {C.G}Pairip Dex Fix ( Try After Translate String to MT ){C.C}'
+        '-t', '--NullRE_Translate',
+        help = f'{C.Y}➸ {C.G}Pairip Restored String Translate ( If you already have pairip.json ){C.C}'
     )
 
     additional.add_argument(

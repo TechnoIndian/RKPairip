@@ -171,7 +171,7 @@ def RK_Techno_IND():
         Flutter_SO(apk_path, isFlutter)
 
     if args.NullRE:
-        DexLib2_Logged(apk_path)
+        DexLib2_Logged(apk_path, args.NullRE_Translate)
     else:
         Decompile_Apk(apk_path, decompile_dir, isAPKTool, Fix_Dex)
 

@@ -77,13 +77,19 @@ RKPairip ( Input Mode )
 
     RKPairip -i YourApkPath.apk -n
 
-**Flag: `-s` ➸ Merge Skip ( Do U Want Last Dex Add Seprate )**
-
-    RKPairip -i YourApkPath.apk -s
-    
 **Flag `-r` ➸ Pairip Dex Fix ( Try After Translate String to MT )**
 
     RKPairip -i YourApkPath.apk -r
+
+**Flag: `-s` ➸ Merge Skip ( Do U Want Last Dex Add Seprate )**
+
+    RKPairip -i YourApkPath.apk -s
+
+**Flag `-t` ➸ Pairip Restored String Translate ( If you already have pairip.json )**
+
+`This flag works only with the -n flag.`
+
+    RKPairip -i YourApkPath.apk -n -t /sdcard/MT2/dictionary/pairip.json
 
 **Flag: `-x` Hook CoreX ( For Unity / Flutter & Crashed APK )**
 

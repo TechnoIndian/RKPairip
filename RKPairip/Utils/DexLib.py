@@ -31,7 +31,16 @@ def DexLib2_Restored(apk_path, json_files):
 
 
 # ---------------- DexLib2 Logged APK ----------------
-def DexLib2_Logged(apk_path):
+def DexLib2_Logged(apk_path, NullRE_Translate):
+
+    if NullRE_Translate:
+        if M.os.path.exists(NullRE_Translate):
+            DexLib2_Restored(apk_path, NullRE_Translate)
+        else:
+            exit(
+                f"\n\n{C.WARN} {C.C} No such file found: "
+                f"{C.Y}{NullRE_Translate} {C.R} ✘\n"
+            )
 
     print(
         f"\n{C_Line}\n\n"

@@ -13,39 +13,22 @@ def Scan_Apk(apk_path):
 
     Package_Name = ''
 
-    isPairip = License_Check = App_Name = False
+    isPairip = False
 
 
     # ---------------- Extract Package Name with AAPT ----------------
     if M.os.name == 'posix':
-        Package_Name = M.subprocess.run(
-            ['aapt', 'dump', 'badging', apk_path],
-            capture_output=True, text=True
-        ).stdout.split("package: name='")[1].split("'")[0]
+        try:
+            Package_Name = M.subprocess.run(
+                ['aapt2', 'dump', 'packagename', apk_path],
+                capture_output=True, text=True
+            ).stdout.strip()
 
-        if Package_Name:
-            print(f"\n{C.S} Package Name {C.E} {C.OG}➸❥ {C.P}'{C.G}{Package_Name}{C.P}' {C.G} ✔")
- 
- 
-        # ---------------- Match Application & License  ----------------
-        A_N, L_C = '"com.pairip.application.Application"', '"com.pairip.licensecheck.LicenseActivity"'
+            if Package_Name:
+                print(f"\n{C.S} Package Name {C.E} {C.OG}➸❥ {C.P}'{C.G}{Package_Name}{C.P}' {C.G} ✔")
 
-        manifest = M.subprocess.run(
-            ['aapt', 'dump', 'xmltree', apk_path, 'AndroidManifest.xml'],
-            capture_output=True, text=True
-        ).stdout
-
-        App_Name = A_N in manifest
-
-        if App_Name:
-            print(f"\n\n{C.S} Application Name {C.E} {C.OG}➸❥ {C.P}'{C.G}{A_N[1:-1]}{C.P}' {C.G} ✔")
-
-        else:
-            License_Check = L_C in manifest
-
-            if License_Check:
-                print(f"\n\n{C.S} License Check {C.E} {C.OG}➸❥ {C.P}'{C.G}{L_C[1:-1]}{C.P}' {C.G} ✔")
-
+        except Exception:
+            Package_Name = ''
 
     # ---------------- Extract Package Name with APKEditor ----------------
     if not Package_Name:
@@ -66,11 +49,12 @@ def Scan_Apk(apk_path):
                     print(f"\n\n{C.S} Pairip Protection {C.E} {C.OG}➸❥ {C.P}'{C.G}Google加固{C.P}' {C.G} ✔")
                     isPairip = True
                     break
-        
-    if not any([App_Name, isPairip, License_Check]):
+
+    if not isPairip:
         exit(f"\n{C.ERROR} Your APK Has No Pairip Protection  ✘\n")
 
 
+    exit()
     # ---------------- Check Flutter / Unity Protection ----------------
     isDex = []
     isUnity = isFlutter = False
@@ -114,4 +98,4 @@ def Scan_Apk(apk_path):
     else:
         pass
 
-    return Package_Name, License_Check, isFlutter
+    return Package_Name, isFlutter

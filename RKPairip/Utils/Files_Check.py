@@ -141,7 +141,7 @@ class FileCheck:
                 (
                     "https://github.com/TechnoIndian/Tools/releases/download/Tools/APKTool.jar",
                     self.APKTool_Path,
-                    "eee4669a704a14e0623407e6701b0b91887e61e1e4049cb7a82833e14ae8b5fd"),
+                    "dbf930b076c6b9be08d57c449cacefc3bdd6b71ebd59b3066fc0e1f5b14f9423"),
                 (
                     "https://github.com/TechnoIndian/Tools/releases/download/Tools/Axml2Xml.jar",
                     self.Axml2Xml_Path,

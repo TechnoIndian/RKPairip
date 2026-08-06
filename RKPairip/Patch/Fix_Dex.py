@@ -26,7 +26,7 @@ def Scan_Application(apk_path, manifest_path, d_manifest_path, isAPKTool):
 
     if M.os.name == 'posix':
         result = M.subprocess.run(
-            ['aapt', 'dump', 'xmltree', apk_path, 'AndroidManifest.xml'],
+            ['aapt2', 'dump', 'xmltree', apk_path, 'AndroidManifest.xml'],
             check=True, capture_output=True, text=True
         )
 

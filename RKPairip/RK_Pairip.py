@@ -55,7 +55,7 @@ def check_dependencies():
                 f'\n{C.INFO} Verify Java Installation {C.G} java --version\n'
             )
 
-    if M.os.name == 'posix': install_package('aapt')
+    if M.os.name == 'posix': install_package('aapt2')
 
 
 # ---------------- Install Package ----------------
@@ -165,7 +165,7 @@ def RK_Techno_IND():
 
 
     # ---------------- Scan & Decompile APK ---------------
-    Package_Name, License_Check, isFlutter = Scan_Apk(apk_path)
+    Package_Name, isFlutter = Scan_Apk(apk_path)
 
     if input and isFlutter:
         Flutter_SO(apk_path, isFlutter)
@@ -226,12 +226,12 @@ def RK_Techno_IND():
 
 
     # ---------------- Extract Target Smali & Logs Inject ---------------
-    if not (CoreX_Hook or License_Check):
+    if not CoreX_Hook:
         Extract_Smali(decompile_dir, smali_folders, isAPKTool)
 
     L_S_F = L_S_C_F(decompile_dir, isAPKTool, Fix_Dex)
 
-    if not (CoreX_Hook or License_Check):
+    if not CoreX_Hook:
         Logs_Injected(L_S_F)
 
         Super_Value = Application_Name(L_S_F)
@@ -262,7 +262,7 @@ def RK_Techno_IND():
     if isAPKTool:
         Encode_Manifest(decompile_dir, manifest_path, d_manifest_path)
     
-    if not (CoreX_Hook or License_Check):
+    if not CoreX_Hook:
         # ---------------- Merge Smali ---------------
         if M_Skip:
             print(f"\n{C.INFO} {C.G} Skip Merge Last Dex {C.Y}{M.os.path.basename(L_S_F)} {C.G} & Add Seprate (For Dex Redivision)\n")
@@ -277,7 +277,7 @@ def RK_Techno_IND():
     # ---------------- Recompile APK ---------------
     Recompile_Apk(decompile_dir, isAPKTool, build_dir, isFlutter)
 
-    if CoreX_Hook or License_Check:
+    if CoreX_Hook:
         CRC_Fix(M_Skip, apk_path, build_dir, ["AndroidManifest.xml", ".dex"])
 
         M.shutil.rmtree(decompile_dir)

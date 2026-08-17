@@ -54,7 +54,6 @@ def Scan_Apk(apk_path):
         exit(f"\n{C.ERROR} Your APK Has No Pairip Protection  ✘\n")
 
 
-    exit()
     # ---------------- Check Flutter / Unity Protection ----------------
     isDex = []
     isUnity = isFlutter = False
